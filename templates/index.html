@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.name }} | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container nav-inner">
+            <a href="#work">Work</a>
+            <a href="#awards">Awards</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="label">Portfolio</p>
+                <h1>{{ profile.name }}</h1>
+                <p class="subtitle">{{ profile.title }}</p>
+                <p class="bio">{{ profile.bio }}</p>
+                <ul class="experience-list">
+                    {% for role in experience %}
+                    <li>
+                        {% if role.link %}
+                        <a href="{{ role.link }}">{{ role.name }}</a>
+                        {% else %}
+                        <span>{{ role.name }}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="hero-image-wrap">
+                <img class="hero-image" src="{{ url_for('static', filename=profile.image) }}" alt="Profile image of {{ profile.name }}">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="work" class="section">
+            <h2>Selected Work</h2>
+            <p class="hint">Slide horizontally to view projects.</p>
+            <div class="work-scroll">
+                {% for project in projects %}
+                <article class="card">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>{{ project.details }}</p>
+                            {% if project.learn_more %}
+                            <a href="{{ project.learn_more }}">Learn more</a>
+                            {% endif %}
+                        </div>
+                    </details>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="awards" class="section">
+            <h2>Awards & Recognition</h2>
+            <ul class="recognitions">
+                {% for item in recognitions %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                {% for image in gallery_images %}
+                <figure class="gallery-item">
+                    <img
+                        class="{% if loop.first %}gallery-first-photo{% elif loop.index == 2 %}gallery-jpl-photo{% endif %}"
+                        src="{{ url_for('static', filename=image.src) }}"
+                        alt="{{ image.alt }}"
+                    >
+                </figure>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>If you are interested in collaborating, feel free to reach out.</p>
+            <div class="contact-links">
+                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+                <a href="{{ contact.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="{{ contact.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="{{ contact.resume }}" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const projectDetails = document.querySelectorAll(".project-details");
+        projectDetails.forEach((item) => {
+            item.addEventListener("toggle", () => {
+                if (!item.open) return;
+                projectDetails.forEach((other) => {
+                    if (other !== item) other.open = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

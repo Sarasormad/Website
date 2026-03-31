@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ details.title }} | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container section detail-page">
+        <a class="back-link" href="/">Back to home</a>
+
+        <header class="detail-hero">
+            <p class="label">Experience</p>
+            <h1>{{ details.title }}</h1>
+            <p class="subtitle">{{ details.team }}</p>
+        </header>
+
+        <section class="detail-block">
+            <h2>Role Overview</h2>
+            <p>{{ details.description }}</p>
+        </section>
+
+        <section class="detail-block">
+            <h2>Papers</h2>
+            <ul class="link-list">
+                {% for paper in details.papers %}
+                <li class="link-list-item">
+                    <a href="{{ paper.url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a>
+                    <span>External link</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
