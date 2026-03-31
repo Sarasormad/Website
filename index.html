@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Madjdi-Sorkhabi | Portfolio</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container nav-inner">
+            <a href="#work">Work</a>
+            <a href="#awards">Awards</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="label">Portfolio</p>
+                <h1>Sara Madjdi-Sorkhabi</h1>
+                <p class="subtitle">Computer Science & Statistics Student | Aspiring Quant Researcher</p>
+                <p class="bio">
+                    I am a senior at California State University, Northridge (B.S. in Computer Science
+                    and Statistics, expected May 2026) focused on quant research, data science, and data
+                    analytics. I enjoy building reproducible data pipelines, developing statistical and
+                    machine learning models, and turning large datasets into practical decisions.
+                </p>
+                <ul class="experience-list">
+                    <li><a href="experience/jpl-intern/">JPL Data Analyst Intern</a></li>
+                    <li><span>NSF Assistant Researcher</span></li>
+                </ul>
+            </div>
+            <div class="hero-image-wrap">
+                <img class="hero-image" src="static/images/headshot.png" alt="Profile image of Sara Madjdi-Sorkhabi">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="work" class="section">
+            <h2>Selected Work</h2>
+            <p class="hint">Slide horizontally to view projects.</p>
+            <div class="work-scroll">
+                <article class="card">
+                    <h3>JPL Flight Data Benchmarking</h3>
+                    <p>Analyzed 350K+ proprietary entries to improve training efficiency and benchmarking quality for JPL flight-related projects.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Engineered features by combining internal and external sources, built reproducible visual analysis in Power BI/Seaborn, and presented actionable recommendations to division leadership.</p>
+                            <a href="experience/jpl-intern/">Learn more</a>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="card">
+                    <h3>ASL Sign Language Interpreter</h3>
+                    <p>Building a real-time computer vision system with Python, OpenCV, and PyTorch to classify ASL gestures and convert prediction translations from text to speech output.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Built a custom ASL Sign Language Dataset using OpenCV and MediaPipe, developed a real-time gesture pipeline, trained classifiers on labeled hand-sign data, and evaluated performance with iterative preprocessing and augmentation to improve robustness.</p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="card">
+                    <h3>AI Mentorship Platform for Intro to Mechanical Engineering</h3>
+                    <p>Led a 10-student team to build a mentorship platform with Flask, React, and SQL for personalized support in Intro to Mechanical Engineering.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Built a course-restricted assistant for ME101 using a RAG pipeline so students can ask ChatGPT-style questions answered only from approved CSUN course materials. Added a quiz-generation tab that creates multiple-choice practice questions by topic from the same uploaded materials, and developed a personalized analytics dashboard that tracks quiz performance metrics to help students identify weak areas.</p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="card">
+                    <h3>Multi-Criteria Shortest Path Optimization</h3>
+                    <p>Extended Dijkstra's algorithm with dual edge weights in Java/Python to evaluate trade-offs in multi-objective routing.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Compared runtime and quality trade-offs against standard shortest-path methods and documented how multi-objective constraints affect route selection and complexity.</p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="card">
+                    <h3>Early Detection of Cocoa Seed Infection</h3>
+                    <p>Developing computer vision models in Python and PyTorch to detect early-stage cocoa seed infection with EfficientNet architectures.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Applied image preprocessing and augmentation workflows to improve model performance and evaluated architecture-level trade-offs for early detection accuracy.</p>
+                        </div>
+                    </details>
+                </article>
+
+                <article class="card">
+                    <h3>NSF Higher Criticism Research</h3>
+                    <p>Implemented statistical computing methods in R for large-scale multiple testing and high-dimensional inference.</p>
+                    <details class="project-details">
+                        <summary>View project details</summary>
+                        <div class="project-details-content">
+                            <p>Built bootstrap resampling workflows from scratch to support Higher Criticism research and contributed to computationally efficient methods for modern statistical inference.</p>
+                        </div>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <section id="awards" class="section">
+            <h2>Awards & Recognition</h2>
+            <ul class="recognitions">
+                <li>Outstanding Undergraduate Mathematics Award</li>
+                <li>Leslie and Terry Cutler Scholarship Endowment in Science and Mathematics</li>
+                <li>NASA Open Science Certification</li>
+                <li>Magna Cum Laude standing (GPA: 3.8/4.0)</li>
+            </ul>
+        </section>
+
+        <section id="gallery" class="section">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img class="gallery-first-photo" src="static/images/IMG_B627A70E6443-1.jpeg" alt="Gallery photo one">
+                </figure>
+                <figure class="gallery-item">
+                    <img class="gallery-jpl-photo" src="static/images/IMG_8704.JPG" alt="Gallery photo two">
+                </figure>
+                <figure class="gallery-item">
+                    <img src="static/images/IMG_8519.jpg" alt="Gallery photo three">
+                </figure>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>If you are interested in collaborating, feel free to reach out.</p>
+            <div class="contact-links">
+                <a href="mailto:sarasormad@gmail.com">sarasormad@gmail.com</a>
+                <a href="https://www.linkedin.com/in/sarasormad" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/sarasormad" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="sara_resume_spring26.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const projectDetails = document.querySelectorAll(".project-details");
+        projectDetails.forEach((item) => {
+            item.addEventListener("toggle", () => {
+                if (!item.open) return;
+                projectDetails.forEach((other) => {
+                    if (other !== item) other.open = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
